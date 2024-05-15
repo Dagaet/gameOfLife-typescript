@@ -1,10 +1,11 @@
 import { describe, it, expect } from "vitest"
-import { myFunction } from "./main.js"
+import { gameOfLife } from "./main.js"
 
-describe("Default test", () => {
-  it("should work", () => {
-    const result = myFunction()
-
-    expect(result).toBe(true)
+describe("Game of life should", () => {
+  it("Create cells in given positions", () => {
+    const board = gameOfLife()
+    board.createCell(1, 1, true)
+    const changedBoard = board.getBoard()
+    expect(changedBoard[1][1]).toBe(true)
   })
 })
